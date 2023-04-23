@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View-History</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item nav-bar">
+            <div class="logo">
+                <a href="/api/car/buy">BuySell</a>
+            </div>
+            <div class="nav-bar-list">
+                <a href="/api/car/buy">Buy</a>
+                <a href="/api/car/sell">Sell</a>
+                <a href="/api/car/logout">Log out</a>
+            </div>
+        </div>
+        <div class="grid-item main-section">
+            <div class="sell-grid">
+                <h1>CAR TRANSACTION HISTORY</h1>
+                <table class="history-table">
+                    <thead>
+                        <th>VIN</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Details</th>
+                    </thead>
+                    <tbody>
+                        <% history.forEach(event => { %>
+                            <tr>
+                                <td><%= event[0] %></td>
+                                <td><%= event[1] %></td>
+                                <td><%= event[2] %></td>
+                                <td><%= event[3] %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="grid-item footer">
+            <p>Second hand car trade using blockchain &copy; APK & Bhavna</p>
+        </div>
+    </div>
+</body>
+</html>

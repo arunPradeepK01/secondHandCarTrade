@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item nav-bar">
+            <div class="logo">
+                <a href="/api/car/buy">BuySell</a>
+            </div>
+            <div class="nav-bar-list">
+                <a href="/api/car/buy">Buy</a>
+                <a href="/api/car/sell">Sell</a>
+                <a href="/api/car/logout">Log out</a>
+            </div>
+        </div>
+        <div class="view-car">
+            <h1>DETAILS</h1>
+            <div class="view-car-details">
+                <div class="field-flex">
+                    <div class="field field-margin">
+                        <h3>Model</h3>
+                        <p><%= car.model %></p>
+                    </div>
+                    <div class="field">
+                        <h3>Price</h3>
+                        <p><%= car.price %></p>
+                    </div>
+                </div>
+                <!-- vin -->
+                <div class="field-flex">
+                    <div class="field field-margin">
+                        <h3>Owner</h3>
+                        <p><%= car.owner %></p>
+                    </div>
+                    <div class="field">
+                        <h3>VIN</h3>
+                        <p><%= car.vin %></p>
+                    </div>
+                </div>
+                <div class="field">
+                    <h3>Description</h3>
+                    <p><%= car.description %></p>
+                </div>
+                <input type="button" onClick="location.href='/api/car/view-car-history/<%= car._id %>'" value='VIEW CAR HISTORY' class="view-btn">
+                <input type="button" onClick="location.href='/api/car/buy-car/<%= car._id %>'" value='BUY' class="view-btn btn-gap">
+            </div>
+            <div class="view-car-edit">
+                <div class="sell-grid">
+                    <h1>EDIT</h1>
+                    <form method="post" action="/api/car/update/<%= car._id %>" class="sell-form">
+                        <div class="input-field">
+                            <label>Owner</label>
+                            <input type="text" name="owner" class="input">
+                        </div>
+                        <!-- vin -->
+                        <div class="input-field">
+                            <label>VIN</label>
+                            <input type="text" name="vin" class="input">
+                        </div>
+                        <div class="input-field">
+                            <label>Model</label>
+                            <input type="text" name="model" class="input">
+                        </div>
+                        <div class="input-field">
+                            <label>Price</label>
+                            <input type="text" name="price" class="input">
+                        </div>
+                        <div class="input-field">
+                            <label>Description</label>
+                            <textarea name="description" class="textarea"></textarea>
+                        </div>
+                        <div class="input-field">
+                            <input type="submit" value="UPDATE" class="btn">
+                            <div>
+                                <p></p>
+                            </div>
+                            <input type="button" onClick="location.href='/api/car/delete/<%= car._id %>'" value='DELETE' class="btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item footer">
+            <p>Second hand car trade using blockchain &copy; APK & Bhavna</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: lightskyblue;
+}
+
+.grid-item {
+    border: 1px solid black;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 1fr 13fr 1fr; /* nav-bar, main-section, footer */
+    height: 100vh;
+}
+
+.nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* logo, nav-bar-list */
+    background-color: deepskyblue;
+}
+
+.nav-bar a {
+    color: black;
+}
+
+.logo {
+    font-size: 2.5rem;
+    margin: 10px;
+}
+
+.nav-bar-list {
+    display: flex; /* a - buy, sell, log out*/
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+/* .search {
+    display: flex;
+    justify-content: center;
+}
+
+.search input {
+    width: 50%;
+    margin: 30px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 20px;
+} */
+
+.buy-grid {
+    text-align: center;
+}
+
+.sell-grid h1{
+    text-align: center;
+    margin: 20px;
+    font-size: 2.5rem;
+}
+
+.buy-grid h1 {
+    font-size: 3rem;
+    margin-top: 25px;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px;
+    margin: 30px 50px;
+}
+
+.box-container .box-item{
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 20px;
+    background: white;
+}
+
+.box-container .box-item img{
+    height:16rem;
+    width:100%;
+    object-fit: cover;
+}
+
+.box-container .box-item .content{
+    margin: 20px;
+}
+
+.box-container .box-item h3{
+    font-size: 1.5rem;
+}
+
+.box-container .box-item h3, p{
+    padding: 10px;
+}
+
+.box-container .box-item .content-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-container .box-item .content-center{
+    text-align: center;
+}
+
+.sell-form {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 50%;
+    margin: 30px auto;
+    padding: 25px;
+}
+
+.sell-form .input-field {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.sell-form .input-field label{
+    width: 300px;
+    font-size: 1.75rem;
+}
+
+.sell-form .input-field .input, .textarea{
+    width: 100%;
+    font-size: 1.25rem;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.sell-form .input-field .textarea{
+    resize: none;
+    height: 5rem;
+}
+
+.sell-form .input-field .btn{
+    width: 100%;
+    font-size: 1.75rem;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+.sell-form .input-field a, .sell-form .input-field p {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.add-btn {
+    width: 50%;
+    font-size: 1.25rem;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: deepskyblue;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.view-car h1 {
+    text-align: center;
+    margin: 50px;
+    font-size: 2.5rem;
+}
+
+.view-car-details {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 50%;
+    margin: 50px auto;
+    padding: 25px;
+    font-size: 1.5rem;
+}
+
+.view-car-details .field-flex {
+    display: flex;
+}
+
+
+.field-margin {
+    min-width: 400px;
+}
+
+.view-car-details .field {
+    margin: 10px;
+}
+
+.view-car-details .field h3 {
+    margin-right: 100px;
+}
+
+.view-btn {
+    width: 100%;
+    font-size: 1.75rem;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+.btn-gap {
+    margin-top: 30px;
+}
+
+.history-table {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.history-table th, .history-table td {
+    border: 1px solid black;
+}
+
+.history-table th {
+    background-color: deepskyblue;
+    font-size: 2rem;
+    padding: 10px;
+}
+
+.history-table td {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.footer {
+    background-color: deepskyblue;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.footer p {
+    margin: 10px;
+}
