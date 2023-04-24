@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy</title>
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item nav-bar">
+            <div class="logo">
+                <a href="/api/car/buy">BuySell</a>
+            </div>
+            <div class="nav-bar-list">
+                <a href="/api/car/buy">Buy</a>
+                <a href="/api/car/sell">Sell</a>
+                <a href="/api/car/log">Log</a>
+                <a href="/api/car/logout">Log out</a>
+            </div>
+        </div>
+        <div class="grid-item main-section">
+            <div class="buy-grid">
+                <h1>CARS FOR SALE</h1>
+                <div class="box-container">
+                    <% carsList.forEach(car => { %>
+                        <div class="box-item">
+                            <img src="/images/carImg.png" alt="">
+                            <div class="content">
+                                <div class="content-flex">
+                                    <h3>Owner: <%= car.owner %></h2>
+                                    <h3>Price: <%= car.price %></h3>
+                                </div>
+                                <hr>
+                                <div class="content-center">
+                                    <h3>Model: <%= car.model %></h3>
+                                    <p><%= car.description %></p>
+                                </div>
+                            </div>
+                            <input type="button" onClick="location.href='/api/car/<%= car._id %>'" value='View' class="add-btn">
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item footer">
+            <p>Second hand car trade using blockchain &copy; APK & Bhavna</p>
+        </div>
+    </div>
+</body>
+</html>
